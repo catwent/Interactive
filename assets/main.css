@@ -1,1 +1,35 @@
 /* Put your CSS here! */
+
+.nav {
+	font-size: 4em;
+	z-index: 2;
+}
+
+.nav a {
+	text-decoration: none;
+	opacity: 0.1;
+	color: white;
+}
+
+.nav a:hover {
+	opacity: 1 !important;
+	color: black !important;
+}
+
+.site-title {
+	position: fixed;
+	top: 8px;
+	left: 7px;
+}
+
+.back-button {
+	position: fixed;
+	bottom: 8px;
+	left: 7px;
+}
+
+.next-button {
+	position: fixed;
+	bottom: 8px;
+	right: 7px;
+}

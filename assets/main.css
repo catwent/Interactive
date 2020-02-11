@@ -2,7 +2,7 @@
 
 .nav {
 	font-size: 4em;
-	z-index: 2;
+	z-index: 2 !important;
 }
 
 .nav a {

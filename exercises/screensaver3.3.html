@@ -11,47 +11,52 @@
 				overflow: hidden;
 			}
 			.mars {
-				background: url("../assets/images/2k_mars.jpg") repeat-x;
-				filter: blur(5px);
-				filter: saturate(0.4);
-				width: 1700px;
+				background: linear-gradient(90deg, #BA4A00, black, #BA4A00) repeat-x;
+				width: 1800px;
 				height: 100vh;
 				position: fixed;
 				z-index: 0.1;
-				animation: slide 28s linear infinite;
+				animation: slide 25s linear infinite;
 				animation-delay:.5s;
-				-webkit-animation: slide 28s linear infinite;
+
+				-webkit-animation: slide 25s linear infinite;
 	    		-webkit-animation-delay:.5s;
 			}
 			.earth {
-				background: url("../assets/images/2k_earth_clouds.jpg") repeat-x;
+				background: linear-gradient(90deg, white, darkblue, white) repeat-x;
 				mix-blend-mode: screen;
-				opacity: 0.8;
-				width: 1700px;
-				height: 100vh;
+				opacity: 0.4;
+				width: 100vw;
+				height: 1000vh;
 				position: fixed;
 				z-index: 0.2;
-				animation: slide 24s linear infinite;
+				animation: slide 18s linear infinite;
 	    		animation-delay:.5s;
-	    		-webkit-animation: slide 24s linear infinite;
+
+	    		-webkit-animation: slide 18s linear infinite;
 	    		-webkit-animation-delay:.5s;
 			}
+
 			@keyframes slide {
 				0%{
 					transform: translate3d(0, 0, 0);
 				}
 				100%{
-			  		transform: translate3d(-1700px, 0, 0);
+			  		transform: translate3d(-1800px, 0, 0);
 				}
 			}
+
 		</style>
+
 	</head>
 	<body>
+
 		<div class="nav">
 			<div class="site-title"><a href="../index.html">Aerosol—Weather</a></div>
 			<div class="back-button"><a href="https://docs.google.com/document/d/1ktd9FDoKIAaf6CC8IDRlu7zvFRDjPjWrILT7R7BX_lI/edit">Back</a></div>
 			<div class="next-button"><a href="../website-as/website-as.html">Next</a></div>
 		</div>	
+		
 		<div class="container">
 			<div class="mars"></div>
 			<div class="earth"></div>

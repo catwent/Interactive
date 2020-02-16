@@ -12,10 +12,11 @@
 			}
 			.mars {
 				background: url("../assets/images/2k_mars.jpg") repeat-x;
-				filter: blur(0px);
+				filter: blur(5px);
 				width: 100vw;
-				height:100vh;
+				height: 100vh;
 				position: fixed;
+				z-index: 0.1;
 				animation: slide 25s linear infinite;
 				animation-delay:.5s;
 
@@ -27,13 +28,13 @@
 				mix-blend-mode: screen;
 				opacity: 0.8;
 				width: 100vw;
-				height:50vh;
+				height: 1000vh;
 				position: fixed;
-				bottom: 0px;
-				animation: slide 24s linear infinite;
+				z-index: 0.2;
+				animation: slide 18s linear infinite;
 	    		animation-delay:.5s;
 
-	    		-webkit-animation: slide 24s linear infinite;
+	    		-webkit-animation: slide 18s linear infinite;
 	    		-webkit-animation-delay:.5s;
 			}
 

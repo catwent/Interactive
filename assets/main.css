@@ -1,13 +1,14 @@
 /* Put your CSS here! */
 
 .nav {
+	position: fixed;
 	font-size: 4em;
-	z-index: 2 !important;
+	z-index: 2;
 }
 
 .nav a {
 	text-decoration: none;
-	opacity: 0.03;
+	opacity: 0.02;
 
 }
 

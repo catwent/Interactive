@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			25 and 24
+		</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="../assets/main.css" type="text/css" />
+		<style>
+			.container {
+				overflow: hidden;
+			}
+			.mars {
+				background: url("../assets/images/2k_mars.jpg") repeat-x;
+				width: 100vw;
+				height:60vh;
+				position: fixed;
+				top: 0px;
+				animation: slide 25s linear infinite;
+				animation-delay:.5s;
+			}
+			.earth {
+				background: url("../assets/images/2k_earth_clouds.jpg") repeat-x;
+				mix-blend-mode: multiply;
+				width: 100vw;
+				height:60vh;
+				position: fixed;
+				bottom: 0px;
+				animation: slide 24s linear infinite;
+	    		animation-delay:.5s;
+			}
+
+			@keyframes slide {
+				0%{
+					transform: translate3d(0, 0, 0);
+				}
+				100%{
+			  		transform: translate3d(-1024px, 0, 0);
+				}
+			}
+
+		</style>
+
+	</head>
+	<body>
+
+		<div class="nav">
+			<div class="site-title"><a href="../index.html">Aerosol—Weather</a></div>
+			<div class="back-button"><a href="https://docs.google.com/document/d/1ktd9FDoKIAaf6CC8IDRlu7zvFRDjPjWrILT7R7BX_lI/edit">Back</a></div>
+			<div class="next-button"><a href="../website-as/website-as.html">Next</a></div>
+		</div>	
+		
+		<div class="container">
+			<div class="mars"></div>
+			<div class="earth"></div>
+		</div>
+
+	</body>	
+</html>

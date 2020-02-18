@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Image Opacity
+		</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="../assets/main.css" type="text/css" />
+		<style>
+			.container {
+				overflow: hidden;
+			}
+			.image-1 {
+				height:100vh;
+				width: 100vw;
+				filter: saturate(0);
+				position: fixed;
+				z-index: 0.1;
+			}
+			.image-2 {
+				height:100vh;
+				width: 100vw;
+				filter: saturate(0);
+				mix-blend-mode: multiply;
+				position: fixed;
+				z-index: 0.2;
+				animation-name: imgfade;
+	    		animation-duration: 10s;
+	    		animation-delay:.5s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: alternate;
+	    		transition-timing-function: ease-in-out;
+			}
+
+			.image-3 {
+				height:100vh;
+				width: 100vw;
+				filter: saturate(0);
+				mix-blend-mode: multiply;
+				position: fixed;
+				z-index: 0.3;
+				animation-name: imgfade;
+	    		animation-duration: 17s;
+	    		animation-delay:1s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: alternate;
+	    		transition-timing-function: ease-in-out;
+			}
+
+			@keyframes imgfade {
+				0% {
+					opacity: 0;
+				}
+				50% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+
+		</style>
+
+	</head>
+	<body>
+
+		<div class="nav">
+			<div class="site-title"><a href="../index.html">Aerosol—Weather</a></div>
+			<div class="back-button"><a href="https://docs.google.com/document/d/1ktd9FDoKIAaf6CC8IDRlu7zvFRDjPjWrILT7R7BX_lI/edit">Back</a></div>
+			<div class="next-button"><a href="screensaver1.2.html">Next</a></div>
+		</div>	
+		<div class ="container">
+			<div class="image-1">
+				<img src="../assets/images/PIA03806_hires.jpg" alt="Mars1">
+			</div>
+			<div class="image-2">
+				<img src="../assets/images/mars6.png" alt="Mars2">
+			</div>
+			<div class="image-3">
+				<img src="../assets/images/mars4.png" alt="Mars2">
+			</div>
+			<div class="text">
+				
+			</div>
+		</div>
+	</body>	
+</html>

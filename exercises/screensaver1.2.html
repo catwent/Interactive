@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Image Opacity
+		</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="../assets/main.css" type="text/css" />
+		<style>
+			.container {
+				overflow: hidden;
+			}
+			.image-1 {
+				height:100vh;
+				width: 100vw;
+				filter: saturate(0);
+				position: fixed;
+				z-index: 0.1;
+			}
+			.image-2 {
+				height:100vh;
+				width: 100vw;
+				filter: saturate(0);
+				mix-blend-mode: multiply;
+				position: fixed;
+				z-index: 0.2;
+				animation-name: imgfade;
+	    		animation-duration: 10s;
+	    		animation-delay:.5s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: alternate;
+	    		transition-timing-function: ease-in-out;
+			}
+
+			.image-3 {
+				height:100vh;
+				width: 100vw;
+				filter: saturate(0);
+				mix-blend-mode: multiply;
+				position: fixed;
+				z-index: 0.3;
+				animation-name: imgfade;
+	    		animation-duration: 17s;
+	    		animation-delay:1s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: alternate;
+	    		transition-timing-function: ease-in-out;
+			}
+
+			.text {
+				position: fixed;
+				z-index: 0.4;
+				color: white;
+				font-size: 3.8rem;
+				margin: 10px;
+			}
+
+			.item1 {
+				animation-name: textfade;
+	    		animation-duration: 20s;
+	    		animation-delay: 11s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item2 {
+				animation-name: textfade;
+	    		animation-duration: 19s;
+	    		animation-delay: 7s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item3 {
+				animation-name: textfade;
+	    		animation-duration: 18s;
+	    		animation-delay: 13s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item4 {
+				animation-name: textfade;
+	    		animation-duration: 17s;
+	    		animation-delay: 6s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item5 {
+				animation-name: textfade;
+	    		animation-duration: 16s;
+	    		animation-delay: 4s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item6 {
+				animation-name: textfade;
+	    		animation-duration: 20s;
+	    		animation-delay: 18s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item7 {
+				animation-name: textfade;
+	    		animation-duration: 19s;
+	    		animation-delay: 14s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item8 {
+				animation-name: textfade;
+	    		animation-duration: 21s;
+	    		animation-delay: 12s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item9 {
+				animation-name: textfade;
+	    		animation-duration: 18s;
+	    		animation-delay: 9s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item10 {
+				animation-name: textfade;
+	    		animation-duration: 20s;
+	    		animation-delay: 3s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item11 {
+				animation-name: textfade;
+	    		animation-duration: 20s;
+	    		animation-delay: 2s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item12 {
+				animation-name: textfade;
+	    		animation-duration: 16s;
+	    		animation-delay: 19s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item13 {
+				animation-name: textfade;
+	    		animation-duration: 18s;
+	    		animation-delay: 5s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item14 {
+				animation-name: textfade;
+	    		animation-duration: 17s;
+	    		animation-delay: 17s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item15 {
+				animation-name: textfade;
+	    		animation-duration: 21s;
+	    		animation-delay: 15s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item16 {
+				animation-name: textfade;
+	    		animation-duration: 18s;
+	    		animation-delay: 1s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item17 {
+				animation-name: textfade;
+	    		animation-duration: 16s;
+	    		animation-delay: 10s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item18 {
+				animation-name: textfade;
+	    		animation-duration: 20s;
+	    		animation-delay: 8s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item19 {
+				animation-name: textfade;
+	    		animation-duration: 19s;
+	    		animation-delay: 16s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item20 {
+				animation-name: textfade;
+	    		animation-duration: 16s;
+	    		animation-delay: 20s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item21 {
+				animation-name: textfade;
+	    		animation-duration: 20s;
+	    		animation-delay: 18.5s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item22 {
+				animation-name: textfade;
+	    		animation-duration: 18s;
+	    		animation-delay: 10.5s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item23 {
+				animation-name: textfade;
+	    		animation-duration: 17s;
+	    		animation-delay: 4.5s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item24 {
+				animation-name: textfade;
+	    		animation-duration: 21s;
+	    		animation-delay: 0.5s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item25 {
+				animation-name: textfade;
+	    		animation-duration: 15s;
+	    		animation-delay: 5.5s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item26 {
+				animation-name: textfade;
+	    		animation-duration: 21s;
+	    		animation-delay: 3.5s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item27 {
+				animation-name: textfade;
+	    		animation-duration: 20s;
+	    		animation-delay: 17.5s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item28 {
+				animation-name: textfade;
+	    		animation-duration: 17s;
+	    		animation-delay: 19.5s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item29 {
+				animation-name: textfade;
+	    		animation-duration: 18s;
+	    		animation-delay: 1.5s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item30 {
+				animation-name: textfade;
+	    		animation-duration: 16s;
+	    		animation-delay: 2.5s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item31 {
+				animation-name: textfade;
+	    		animation-duration: 21s;
+	    		animation-delay: 8.5s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item32 {
+				animation-name: textfade;
+	    		animation-duration: 17s;
+	    		animation-delay: 9.5s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item33 {
+				animation-name: textfade;
+	    		animation-duration: 15s;
+	    		animation-delay: 12.5s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item34 {
+				animation-name: textfade;
+	    		animation-duration: 18s;
+	    		animation-delay: 16.5s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item35 {
+				animation-name: textfade;
+	    		animation-duration: 19s;
+	    		animation-delay: 6.5s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item36 {
+				animation-name: textfade;
+	    		animation-duration: 20s;
+	    		animation-delay: 13.5s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item37 {
+				animation-name: textfade;
+	    		animation-duration: 22s;
+	    		animation-delay: 7.5s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item38 {
+				animation-name: textfade;
+	    		animation-duration: 19s;
+	    		animation-delay: 11.5s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item39 {
+				animation-name: textfade;
+	    		animation-duration: 20s;
+	    		animation-delay: 15.5s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item40 {
+				animation-name: textfade;
+	    		animation-duration: 18s;
+	    		animation-delay: 14.5s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+			.item41 {
+				animation-name: textfade;
+	    		animation-duration: 21s;
+	    		animation-delay: 0s;
+	    		animation-iteration-count: infinite;
+	    		animation-direction: normal;
+	    		transition-timing-function: ease-in-out;
+			}
+
+			@keyframes imgfade {
+				0% {
+					opacity: 0;
+				}
+				50% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+			@keyframes textfade {
+				0% {
+					opacity: 0;
+				}
+				40% {
+					opacity: 0;
+				}
+				50% {
+					opacity: 1;
+				}
+				60% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+		</style>
+
+	</head>
+	<body>
+
+		<div class="nav">
+			<div class="site-title"><a href="../index.html">Aerosol—Weather</a></div>
+			<div class="back-button"><a href="screensaver1.1.html">Back</a></div>
+			<div class="next-button"><a href="screensaver2.1.html">Next</a></div>
+		</div>	
+		<div class ="container">
+			<div class="image-1">
+				<img src="../assets/images/PIA03806_hires.jpg" alt="Mars1">
+			</div>
+			<div class="image-2">
+				<img src="../assets/images/mars6.png" alt="Mars2">
+			</div>
+			<div class="image-3">
+				<img src="../assets/images/mars4.png" alt="Mars2">
+			</div>
+			<div class="text">
+				<span class="item1">Defrosting Spots</span>
+				<span class="item2">Scallop</span>
+				<span class="item3">Aerosols</span>
+				<span class="item4">Large-Scale Slumping</span>
+				<span class="item5">Complex Folds</span>
+				<span class="item6">Winter View</span>
+				<span class="item7">Bull's Eye</span>
+				<span class="item8">Starburst</span>
+				<span class="item9">Cryptic Terrain</span>
+				<span class="item10">Seasonal Polygonal Features</span>
+				<span class="item11">Jeans</span>
+				<span class="item12">Depression Features</span>
+				<span class="item13">Tongue Terminus</span>
+				<span class="item14">Bright Streaks</span>
+				<span class="item15">The Beautiful Arc of a Dune</span>
+				<span class="item16">Deformed Layered Sediments</span>
+				<span class="item17">Active Geyser</span>
+				<span class="item18">White Rock</span>
+				<span class="item19">Zigzag Channels</span>
+				<span class="item20">Spring Colors</span>
+				<span class="item21">Dark Fans</span>
+				<span class="item22">Dune Symmetry</span>
+				<span class="item23">Aprons</span>
+				<span class="item24">Ancient Violence</span>
+				<span class="item25">Enigma</span>
+				<span class="item26">Dust Devil</span>
+				<span class="item27">Time-Lapse</span>
+				<span class="item28">Butterfly Ejecta</span>
+				<span class="item29">Layered Deposits</span>
+				<span class="item30">Heartbreak</span>
+				<span class="item31">Contortions on the Floor</span>
+				<span class="item32">Hot Lava Cones</span>
+				<span class="item33">Spider Trough Network</span>
+				<span class="item34">Possible Volcano</span>
+				<span class="item35">Chasma</span>
+				<span class="item36">Polygonal Fracturing</span>
+				<span class="item37">Thumbprint Texture</span>
+				<span class="item38">Summer Ice</span>
+				<span class="item39">Banded Flow</span>
+				<span class="item40">Swiss Cheese</span>
+				<span class="item41">Disappearing Craters</span>
+				</div>
+		</div>
+	</body>	
+</html>

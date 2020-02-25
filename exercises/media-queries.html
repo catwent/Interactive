@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Media Queries
+		</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="../assets/main.css" type="text/css" />
+		<style>
+			body { 
+				background: #443e3e; 
+			}
+			
+			.letters {
+				font-size: 600px;
+				color: #2c2b24;
+			}
+			.letter7{
+				position: fixed;
+				top: 50px;
+				left: 1200px;
+				z-index: 0.01;
+				filter: blur(30px);
+			}
+			.letter6{
+				position: fixed;
+				top: 50px;
+				left: 1000px;
+				z-index: 0.02;
+				filter: blur(25px);
+			}
+			.letter5{
+				position: fixed;
+				top: 50px;
+				left: 800px;
+				z-index: 0.03;
+				filter: blur(20px);
+			}
+			.letter4{
+				position: fixed;
+				top: 50px;
+				left: 650px;
+				z-index: 0.04;
+				filter: blur(15px);
+			}
+			.letter3{
+				position: fixed;
+				top: 50px;
+				left: 400px;
+				z-index: 0.05;
+				filter: blur(11px);
+			}
+			.letter2{
+				position: fixed;
+				top: 50px;
+				left: 250px;
+				z-index: 0.06;
+				filter: blur(7px);
+			}
+			.letter1{
+				position: fixed;
+				top: 50px;
+				left: 100px;
+				z-index: 0.07;
+				filter: blur(2px);
+			}
+
+			@media screen and (min-width: 1351px) {
+				.letter1 {display: none;}
+				.letter2 { display: none;}
+				.letter3 { display: none;}
+				.letter4 { display: none;}
+				.letter5 { display: none;}
+				.letter6 { display: none;}
+				.letter7 { display: inline;}
+			}
+
+			@media screen and (min-width: 1201px) and (max-width: 1350px){
+				.letter1 {display: none;}
+				.letter2 { display: none;}
+				.letter3 { display: none;}
+				.letter4 { display: none;}
+				.letter5 { display: none;}
+				.letter6 { display: inline;}
+				.letter7 { display: none;}
+			}
+
+			@media screen and (min-width: 1051px) and (max-width: 1200px){
+				.letter1 {display: none;}
+				.letter2 { display: none;}
+				.letter3 { display: none;}
+				.letter4 { display: none;}
+				.letter5 { display: inline;}
+				.letter6 { display: none;}
+				.letter7 { display: none;}
+			}
+
+			@media screen and (min-width: 901px) and (max-width: 1050px) {
+				.letter1 {display: none;}
+				.letter2 { display: none;}
+				.letter3 { display: none;}
+				.letter4 { display: inline;}
+				.letter5 { display: none;}
+				.letter6 { display: none;}
+				.letter7 { display: none;}
+			}
+
+			@media screen and (min-width: 751px) and (max-width: 900px){
+				.letter1 {display: none;}
+				.letter2 { display: none;}
+				.letter3 { display: inline;}
+				.letter4 { display: none;}
+				.letter5 { display: none;}
+				.letter6 { display: none;}
+				.letter7 { display: none;}
+			}
+
+			@media screen and (min-width: 601px) and (max-width: 750px) {
+				.letter1 {display: none;}
+				.letter2 { display: inline ;}
+				.letter3 { display: none;}
+				.letter4 { display: none;}
+				.letter5 { display: none;}
+				.letter6 { display: none;}
+				.letter7 { display: none;}
+			}
+			@media screen and (max-width: 600px) {
+				.letter1 {display: inline;}
+				.letter2 { display: none;}
+				.letter3 { display: none;}
+				.letter4 { display: none;}
+				.letter5 { display: none;}
+				.letter6 { display: none;}
+				.letter7 { display: none;}				
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class="nav">
+			<div class="site-title"><a href="../index.html">Aerosol—Weather</a></div>
+			<div class="back-button"><a href="screensaver2.2.html">Back</a></div>
+			<div class="next-button"><a href="../website-as/website-as.html">Next</a></div>
+		</div>	
+		
+		<div class="letters">
+			<div class="letter1">n</div>
+			<div class="letter2">o</div>
+			<div class="letter3">w</div>
+			<div class="letter4">h</div>
+			<div class="letter5">e</div>
+			<div class="letter6">r</div>
+			<div class="letter7">e</div>
+		</div>
+	</body>	
+</html>

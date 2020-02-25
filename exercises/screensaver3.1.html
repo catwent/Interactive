@@ -10,31 +10,25 @@
 			.container {
 				overflow: hidden;
 			}
-			.mars {
-				background: linear-gradient(90deg, #BA4A00, black, #BA4A00) repeat-x;
+			.fog {
+				background: linear-gradient(90deg, lightgray, dimgray, lightgray) repeat-x;
 				width: 2100px;
 				height: 100vh;
 				position: fixed;
 				z-index: 0.1;
-				animation: slide 25s linear infinite;
+				animation: slide 20s linear infinite;
 				animation-delay:.5s;
-
-				-webkit-animation: slide 25s linear infinite;
-	    		-webkit-animation-delay:.5s;
 			}
 			.earth {
-				background: linear-gradient(90deg, white, darkblue, white) repeat-x;
+				width: 600px;
+				height: 600px;
+				border-radius: 50%;
 				mix-blend-mode: screen;
 				opacity: 0.4;
-				width: 2100px;
-				height: 1000vh;
+				filter: blur (15px);
 				position: fixed;
 				z-index: 0.2;
-				animation: slide 18s linear infinite;
-	    		animation-delay:.5s;
-
-	    		-webkit-animation: slide 18s linear infinite;
-	    		-webkit-animation-delay:.5s;
+			
 			}
 
 			@keyframes slide {
@@ -54,7 +48,7 @@
 		<div class="nav">
 			<div class="site-title"><a href="../index.html">Aerosol—Weather</a></div>
 			<div class="back-button"><a href="screensaver2.1.html">Back</a></div>
-			<div class="next-button"><a href="media-queries.html">Next</a></div>
+			<div class="next-button"><a href="../website-as/website-as.html">Next</a></div>
 		</div>	
 		
 		<div class="container">

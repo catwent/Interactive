@@ -16,6 +16,18 @@
 
 	<div id="mars"></div>
 
+<!-- 	<script type="text/javascript" src="p5.min.js">
+	</script>
+
+	<script type="text/javascript" src="p5.dom.min.js">
+	</script>s
+
+	<script type="text/javascript" src="p5.asciiart.min.js">
+	</script>
+
+	<script type="text/javascript" src="ascii-test.js">
+	</script> -->
+
 
 	<script type="text/javascript">
 		class imgToAscii {
@@ -104,7 +116,7 @@
 		mars.crossOrigin = "anonymous";
 
 		$( document ).ready(function() {
-			var text= $('')
+			var text= $(this.string)
 		    var delay=10;
 			var elem = $("#mars");
 			//elem - jQuery element where text is to be attached

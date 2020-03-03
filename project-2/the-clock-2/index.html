@@ -114,7 +114,7 @@
 		mars.crossOrigin = "anonymous";
 
 		$( document ).ready(function() {
-			var text = document.getElementsByTagName('pre')[0].innerText;
+			var text = document.getElementsByTagName('pre')[0].innerHTML;
 			var lines = text.split(/\r?\n/);
 			console.log(lines, lines.length);
 		    var delay=10;

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			ASCIING the Time
+		</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="../../assets/main.css" type="text/css" />
+		<script src="../assets/jquery-3.4.1.min.js"></script>
+		<style>
+			body { 
+			}""
+
+			.text {
+				overflow: hidden;
+				animation: 
+					typing 100s steps(40, end),
+			}
+
+			.container {
+				margin: 100px;
+				font-size: 0.8rem;
+				font-family: monospace;
+				line-height: 0.75rem;
+				color: black;
+				filter: blur(0px);
+			}
+
+			@keyframes typing {
+				from { width: 0 }
+				to { width: 100% }
+}
+
+			@media screen and (max-width: 320px) {
+				
+			}
+
+		</style>
+	</head>
+	<body>
+
+		<div class="nav">
+			<div class="site-title"><a href="../index.html">Aerosol—Weather</a></div>
+			<div class="back-button"><a href="../project-1/list_5_5.html">Back</a></div>
+			<div class="next-button"><a href="../index.html">Next</a></div>
+		</div>	
+		
+		<div class="container">
+			<div id="myText">
+
+			</div>
+		</div>
+
+		<script type="text/javascript" src="p5.min.js">
+		</script>
+
+		<script type="text/javascript" src="p5.dom.min.js">
+		</script>s
+
+		<script type="text/javascript" src="p5.asciiart.min.js">
+		</script>
+
+		<script type="text/javascript" src="ascii-test.js">
+		</script>
+
+
+		<script type="text/javascript">
+			var myAsciiArt;
+			var asciiart_width = 120; var asciiart_height = 60;
+			var images = [];
+			var gfx;
+			var ascii_arr;
+			var cyclic_t;
+			function preload() {
+			  images[0] =
+			    loadImage('https://placekitten.com/g/640/480');
+			}
+
+			function setup() {
+			  createCanvas(640, 480);
+			  gfx = createGraphics(asciiart_width, asciiart_height);
+			  gfx.pixelDensity(1);
+			  myAsciiArt = new AsciiArt(this);
+			  myAsciiArt.printWeightTable();
+			  textAlign(CENTER, CENTER); textFont('monospace', 8); textStyle(NORMAL);
+			  noStroke(); fill(255);
+			  frameRate(30);
+			}
+
+			function draw() {
+			    background(0);
+			    cyclic_t = millis() * 0.0002 % images.length;
+			    gfx.image(images[floor(cyclic_t)], 0, 0, gfx.width, gfx.height);
+			    gfx.filter(POSTERIZE, 3);
+			    ascii_arr = myAsciiArt.convert(gfx);
+			    myAsciiArt.typeArray2d(ascii_arr, this);
+			    tint(255, pow(1.0 - (cyclic_t % 1.0), 4) * 255);
+			    image(images[floor(cyclic_t)], 0, 0, width, height);
+			    noTint();
+			}
+
+			function mouseReleased() {
+			  /*
+			    If you want to export the generated ASCII graphics, you can use the built-in
+			    function convert2dArrayToString() to convert the array of glyphs to a string.
+			  */
+			  // console.log(myAsciiArt.convert2dArrayToString(ascii_arr));
+			}
+			typeArray2d = function(_arr2d, _dst, _x, _y, _w, _h) {
+			  if(_arr2d === null) {
+			    // console.log('[typeArray2d] _arr2d === null');
+			    return;
+			  }
+			  if(_arr2d === undefined) {
+			    // console.log('[typeArray2d] _arr2d === undefined');
+			    return;
+			  }
+			  switch(arguments.length) {
+			    case 2: _x = 0; _y = 0; _w = width; _h = height; break;
+			    case 4: _w = width; _h = height; break;
+			    case 6: /* nothing to do */ break;
+			    default:
+			      console.log(
+			        '[typeArray2d] bad number of arguments: ' + arguments.length
+			      );
+			      return;
+			  }
+			  if(_dst.canvas === null) {
+			    // console.log('[typeArray2d] _dst.canvas === null');
+			    return;
+			  }
+			  if(_dst.canvas === undefined) {
+			    // console.log('[typeArray2d] _dst.canvas === undefined');
+			    return;
+			  }
+			  var temp_ctx2d = _dst.canvas.getContext('2d');
+			  if(temp_ctx2d === null) {
+			    // console.log('[typeArray2d] _dst canvas 2d context is null');
+			    return;
+			  }
+			  if(temp_ctx2d === undefined) {
+			    console.log('[typeArray2d] _dst canvas 2d context is undefined');
+			    return;
+			  }
+			  var dist_hor = _w / _arr2d.length;
+			  var dist_ver = _h / _arr2d[0].length;
+			  var offset_x = _x + dist_hor * 0.5;
+			  var offset_y = _y + dist_ver * 0.5;
+			  for(var temp_y = 0; temp_y < _arr2d[0].length; temp_y++)
+			    for(var temp_x = 0; temp_x < _arr2d.length; temp_x++)
+			      /*text*/temp_ctx2d.fillText(
+			        _arr2d[temp_x][temp_y],
+			        offset_x + temp_x * dist_hor,
+			        offset_y + temp_y * dist_ver
+			      );
+			}
+			// console.log(myAsciiArt.convert2dArrayToString(ascii_arr));
+
+
+
+
+			$( document ).ready(function() {
+			    let text = myAsciiArt.convert2dArrayToString(ascii_arr);
+			    var delay=10;
+						var elem = $("#myText");
+						//elem - jQuery element where text is to be attached
+						//delay - the delay in each text
+						var addTextByDelay = function(text,elem,delay){
+						    if(!elem){
+						        elem = $("body");
+						    }
+						    if(!delay){
+						        delay = 10;
+						    }
+						    if(text.length >0){
+						        //append first character 
+						        elem.append(text[0]);
+						        setTimeout(
+						            function(){
+						                //Slice text by 1 character and call function again                
+						                addTextByDelay(text.slice(1),elem,delay);            
+						             },delay                 
+						            );
+						    }
+						}
+						addTextByDelay(text,elem,delay);
+			});
+		</script>
+
+
+		<script type="text/javascript">
+			var colors = ['darkgrey','#443e3e','darkblue','darksalmon','darkgoldenrod','#dff0f4','cadetblue','linen'];
+			var new_color = colors[Math.floor(Math.random()*colors.length)];
+			$('body').css('background-color',new_color);
+		</script>
+
+	</body>	
+</html>

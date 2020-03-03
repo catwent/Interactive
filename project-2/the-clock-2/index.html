@@ -114,7 +114,7 @@
 		mars.crossOrigin = "anonymous";
 
 		$( document ).ready(function() {
-			var text= $('pre').text();
+			var text = document.getElementsByTagName('pre')[0].innerText;
 			var lines = text.split(/\r?\n/);
 			console.log(lines, lines.length);
 		    var delay=10;
@@ -141,7 +141,7 @@
 			}
 			for(var i = 0; i < lines.length; i++) {
 				addTextByDelay(lines[i],elem,delay);
-				elem.append('</br>');			
+				elem.append('<br>');			
 			}
 			text.style.fontFamily = "Courier, monospace";
 			text.style.lineHeight = "6px";

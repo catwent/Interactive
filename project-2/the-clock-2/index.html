@@ -141,7 +141,8 @@
 			}
 			for(var i = 0; i < lines.length; i++) {
 				addTextByDelay(lines[i],elem,delay);
-				$(elem).append('<br>');			
+				var h = $(elem).html().append('<br/>');
+				$(elem).html(h);			
 			}
 			text.style.fontFamily = "Courier, monospace";
 			text.style.lineHeight = "6px";

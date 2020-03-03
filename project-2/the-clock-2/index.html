@@ -115,7 +115,7 @@
 
 		$( document ).ready(function() {
 			var text= $('pre').text();
-			var lines = text.split('\n');
+			var lines = text.split(/\r?\n/);
 			console.log(lines, lines.length);
 		    var delay=10;
 			var elem = $("#mars");

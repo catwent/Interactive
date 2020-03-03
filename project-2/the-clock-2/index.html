@@ -76,7 +76,10 @@
 			document.body.appendChild(pre);
 			await this.loadImage;
 			pre.innerText = this.string;
+			console.log(document.createElement)
 		}
+
+
 
 		// async displayColor(bg){
 		// 	let pre = document.createElement('pre');
@@ -101,7 +104,7 @@
 		mars.crossOrigin = "anonymous";
 
 		$( document ).ready(function() {
-			var text= $('pre')
+			var text= $('document.createElement')
 		    var delay=10;
 			var elem = $("#mars");
 			//elem - jQuery element where text is to be attached

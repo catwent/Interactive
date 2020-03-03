@@ -76,17 +76,17 @@
 			pre.innerText = this.string;
 		}
 
-		async displayColor(bg){
-			let pre = document.createElement('pre');
-			pre.style.fontFamily = "Courier, monospace";
-			pre.style.lineHeight = "6px";
-			pre.style.fontSize = "11px";
-			pre.style.display = "inline-block";
-			pre.style.backgroundColor = bg;
-			document.body.appendChild(pre);
-			await this.loadImage;
-			pre.innerHTML = this.stringColor;
-		}
+		// async displayColor(bg){
+		// 	let pre = document.createElement('pre');
+		// 	pre.style.fontFamily = "Courier, monospace";
+		// 	pre.style.lineHeight = "6px";
+		// 	pre.style.fontSize = "11px";
+		// 	pre.style.display = "inline-block";
+		// 	pre.style.backgroundColor = bg;
+		// 	document.body.appendChild(pre);
+		// 	await this.loadImage;
+		// 	pre.innerHTML = this.stringColor;
+		// }
 
 	}
 	</script>

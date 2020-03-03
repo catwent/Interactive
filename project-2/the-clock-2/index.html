@@ -141,7 +141,7 @@
 			}
 			for(var i = 0; i < lines.length; i++) {
 				addTextByDelay(lines[i],elem,delay);
-				elem.append('\n');			
+				elem.innerHTML += '<br>';			
 			}
 			text.style.fontFamily = "Courier, monospace";
 			text.style.lineHeight = "6px";

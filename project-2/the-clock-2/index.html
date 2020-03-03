@@ -9,6 +9,7 @@
 		#mars {
 			margin-top: 100px;
 			margin-left: 100px;
+			margin-right: 100px;
 		}
 	</style>
 </head>
@@ -97,20 +98,6 @@
 			console.log(this.string)
 		}
 
-
-
-		// async displayColor(bg){
-		// 	let pre = document.createElement('pre');
-		// 	pre.style.fontFamily = "Courier, monospace";
-		// 	pre.style.lineHeight = "6px";
-		// 	pre.style.fontSize = "11px";
-		// 	pre.style.display = "inline-block";
-		// 	pre.style.backgroundColor = bg;
-		// 	document.body.appendChild(pre);
-		// 	await this.loadImage;
-		// 	pre.innerHTML = this.stringColor;
-		// }
-
 	}
 	</script>
 
@@ -118,7 +105,6 @@
 	<script type="text/javascript">
 		let mars = new imgToAscii('mars8_200x150.png',0.8);
 		mars.display();
-		// mars.displayColor("gray");
 		mars.crossOrigin = "anonymous";
 
 		$( document ).ready(function() {

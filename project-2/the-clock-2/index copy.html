@@ -97,10 +97,7 @@
 
 
 	<script type="text/javascript">
-		var curImg = 0;
-
-		function setupNewImage(imageName) {
-			let mars = new imgToAscii(imageName,0.8);
+			let mars = new imgToAscii('mars8_200x150.png',0.8);
 			mars.display();
 			mars.crossOrigin = "anonymous";
 
@@ -134,22 +131,12 @@
 				var h = $(elem).html().append('<br/>');
 				$(elem).html(h);			
 			}
+			
 			text.style.fontFamily = "Courier, monospace";
 			text.style.lineHeight = "6px";
 			text.style.fontSize = "9px";
 			text.style.letterSpacing = "3px";
 			text.style.display = "inline-block";
-
-		}
-
-
-		$( document ).ready(function() {
-			let imageNames = Array('mars8_200x150.png', 'mars8_200x150.png', 'mars8_200x150.png');
-			setInterval(function() {
-				setupNewImage(imageNames[curImg]);
-				curImg = (curImg + 1) % imageNames.length;
-			}, 100000);
-		});
 
 	</script>
 

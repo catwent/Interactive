@@ -83,7 +83,7 @@
 			async display() {
 				await this.loadImage;
 
-				var delay = 10;
+				var delay = 2;
 				var elem = $("#mars");
 				elem.css({
 					fontFamily: "Courier, monospace",
@@ -137,7 +137,7 @@
 			curImg++;
 			
 			// loop through the other images
-			var imageDelay = 300000;
+			var imageDelay = 60000;
 			setInterval(function() {
 				setupNewImage(imageNames[curImg]);
 				curImg = (curImg + 1) % imageNames.length;
@@ -148,7 +148,7 @@
 
 
 	<script type="text/javascript">
-		var colors = ['darkgrey','#443e3e','darksalmon','darkgoldenrod','#dff0f4','cadetblue','linen'];
+		var colors = ['darkgrey','#443e3e','darksalmon','darkgoldenrod','#dff0f4','linen'];
 		var new_color = colors[Math.floor(Math.random()*colors.length)];
 		$('body').css('background-color',new_color);
 	</script>

@@ -62,10 +62,10 @@
 								let b = this.imageData.data[i+2];
 								if( (r * 0.2126) + (g * 0.7152) + (b * 0.0722) < (j+1) * grayStep ){
 									this.string += this.alphabet[this.charType][j];
-									this.stringColor += "<span style=\"color: rgb("+r+","+g+","+b+"); \">" 
+									this.stringColor += "<span style=\"color: rgb("+r+","+g+","+b+"); \">"
 																	 +this.alphabet[this.charType][j]
 																	 +"</span>";
-									break;	
+									break;
 								}
 							}
 							if( !((i/4+1) % this.canvas.width) ){
@@ -78,8 +78,8 @@
 					this.image.error = reject;
 				}).catch( e => console.error(e) );
 			}
-			
-			
+
+
 			async display() {
 				await this.loadImage;
 
@@ -93,34 +93,34 @@
 					display: "inline-block"
 				});
 				elem.html('');
-				
+
 				var addTextByDelay = function(inputText, elem, delay) {
 				    if(inputText.length > 0) {
 				        //append first character; if it's a new line, add a <br> tag
 						if(inputText[0] == '\n') {
-					        elem.html(elem.html() + '<br/>');							
+					        elem.html(elem.html() + '<br/>');
 						} else {
 					        elem.html(elem.html() + inputText[0]);
 						}
 				        setTimeout(
 					        function() {
-				               //Slice text by 1 character and call function again                
-				               addTextByDelay(inputText.slice(1), elem, delay);            
+				               //Slice text by 1 character and call function again
+				               addTextByDelay(inputText.slice(1), elem, delay);
 				            }, delay
 				        );
 				    }
 				}
-				
+
 				addTextByDelay(this.string,elem,delay);
 			}
-	
+
 		}
-		
-		
-		
-		
+
+
+
+
 		var curImg = 0;
-		
+
 
 		function setupNewImage(imageName) {
 			let mars = new imgToAscii(imageName,0.8);
@@ -131,13 +131,13 @@
 
 		$( document ).ready(function() {
 			let imageNames = ['mars8_200x150_text1-02.png', 'mars8_200x150_text1-01.png', 'mars8_200x150.png'];
-			
+
 			// run it immediately
 			setupNewImage(imageNames[curImg]);
 			curImg++;
-			
+
 			// loop through the other images
-			var imageDelay = 60000;
+			var imageDelay = 100000;
 			setInterval(function() {
 				setupNewImage(imageNames[curImg]);
 				curImg = (curImg + 1) % imageNames.length;

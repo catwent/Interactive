@@ -17,7 +17,7 @@
 			height: 25px;
 			display: block;
 			position: fixed;
-			bottom: 10px;
+			bottom: 15px;
 			margin-left: 10px;
 			margin-right: 10px;
 			font-family: monospace;
@@ -27,7 +27,7 @@
 
 		@media screen and (max-width: 570px) {
 			#mars {
-				font-size: 0.1vw;
+				font-size: 0.25vw;
 				letter-spacing: 1px;
 				line-height: 3px;
 			}
@@ -35,7 +35,7 @@
 
 		@media screen and (min-width: 571px) {
 			#mars {
-				font-size: 0.3vw;
+				font-size: 0.35vw;
 				letter-spacing: 1px;
 				line-height: 4px;
 			}
@@ -51,7 +51,7 @@
 
 		@media screen and (min-width: 768px) {
 		  #mars {
-		    font-size: 0.5vw;
+		    font-size: 0.55vw;
 				letter-spacing: 2px;
 				line-height: 5px;
 		  }
@@ -203,7 +203,7 @@
 
 
 		$( document ).ready(function() {
-			let imageNames = ['mars8_200x150.png', 'mars8_200x150.png', 'mars8_200x150.png'];
+			let imageNames = ['mars8_200x150.png', 'mars1_200x150.png', 'mars2_200x150.png', 'mars3_200x150.png', 'mars4_200x150.png', 'mars5_200x150.png', 'mars6_200x150.png', 'mars7_200x150.png', 'mars9_200x150.png', 'mars10_200x150.png'];
 
 			// run it immediately
 			setupNewImage(imageNames[curImg]);
@@ -254,7 +254,7 @@
 
 
 	<script type="text/javascript">
-		var colors = ['darkgrey','mistyrose','darkgoldenrod','#dff0f4','linen','azure'];
+		var colors = ['darkgrey','darkgoldenrod','#dff0f4','linen','azure'];
 		var new_color = colors[Math.floor(Math.random()*colors.length)];
 		$('body').css('background-color',new_color);
 	</script>

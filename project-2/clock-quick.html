@@ -2,6 +2,7 @@
 <html lang="pt-br">
 <head>
 	<meta charset="utf-8" />
+	<meta name="viewport" content="width=500px, height=700px, initial-scale=1">
 	<link rel="stylesheet" href="../../assets/main.css" type="text/css"/>
 	<script src="jquery-3.4.1.min.js"></script>
 	<title>ASCIIng the Time</title>
@@ -27,7 +28,7 @@
 
 		@media screen and (max-width: 570px) {
 			#mars {
-				font-size: 0.25vw;
+				font-size: 0.6vw;
 				letter-spacing: 1px;
 				line-height: 3px;
 			}
@@ -35,7 +36,7 @@
 
 		@media screen and (min-width: 571px) {
 			#mars {
-				font-size: 0.35vw;
+				font-size: 0.65vw;
 				letter-spacing: 1px;
 				line-height: 4px;
 			}
@@ -43,7 +44,7 @@
 
 		@media screen and (min-width: 712px) {
 			#mars {
-				font-size: 0.4vw;
+				font-size: 0.5vw;
 				letter-spacing: 2px;
 				line-height: 4px;
 			}
@@ -85,6 +86,12 @@
 				font-size: 0.65vw;
 				letter-spacing: 3px;
 				line-height: 9px;
+			}
+		}
+
+		@media screen and (max-width: 712px) {
+			#intro {
+				font-size: 0.8rem;
 			}
 		}
 
@@ -223,7 +230,7 @@
 
 
 	<script type="text/javascript">
-		var text="This is a visual clock that renders one image every day on Mars, which lasts 24 hours, 37 minutes, and 22 seconds. It is most optimal at a viewport width of 1432 pixels or wider.";
+		var text="This is a visual clock that renders one image every day on Mars, which lasts 24 hours, 37 minutes, and 22 seconds.";
 		var delay=60;
 		var elem = $("#intro");
 		//text- string

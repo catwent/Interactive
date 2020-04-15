@@ -11,7 +11,6 @@
 			margin-left: 10px;
 			margin-right: 10px;
 			font-family: monospace;
-			letter-spacing: 3px;
 			display: inline-block;
 		}
 		#intro {
@@ -26,30 +25,42 @@
 			letter-spacing: 2px;
 		}
 
-		@media screen and (max-width: 767px) {
+		@media screen and (max-width: 575px) {
 			#mars {
 				font-size: 0.2vw;
+				letter-spacing: 1px;
+				line-height: 4px;
+			}
+		}
+
+		@media screen and (max-width: 767px) {
+			#mars {
+				font-size: 0.3vw;
+				letter-spacing: 2px;
 				line-height: 5px;
 			}
 		}
 
 		@media screen and (min-width: 768px) {
 		  #mars {
-		    font-size: 0.3vw;
+		    font-size: 0.4vw;
+				letter-spacing: 2px;
 				line-height: 6px;
 		  }
 		}
 
 		@media screen and (min-width: 992px) {
 			#mars {
-				font-size: 0.4vw;
+				font-size: 0.55vw;
+				letter-spacing: 3px;
 				line-height: 7px;
 			}
 		}
 
 		@media screen and (min-width: 1200px) {
 			#mars {
-				font-size: 0.5vw;
+				font-size: 0.6vw;
+				letter-spacing: 3px;
 				line-height: 8px;
 			}
 		}
@@ -57,6 +68,7 @@
 		@media screen and (min-width: 1380px) {
 			#mars {
 				font-size: 0.65vw;
+				letter-spacing: 3px;
 				line-height: 9px;
 			}
 		}

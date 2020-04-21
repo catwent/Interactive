@@ -163,7 +163,7 @@
 			async display() {
 				await this.loadImage;
 
-				var delay = 2;
+				var delay = 1;
 				var elem = $("#mars");
 				elem.css({
 					// fontFamily: "Courier, monospace",
@@ -217,7 +217,7 @@
 			curImg++;
 
 			// loop through the other images
-			var imageDelay = 120000;
+			var imageDelay = 60000;
 			setInterval(function() {
 				setupNewImage(imageNames[curImg]);
 				curImg = (curImg + 1) % imageNames.length;

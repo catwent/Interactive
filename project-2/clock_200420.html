@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=500px, height=700px, initial-scale=1">
+	<link rel="stylesheet" href="../../assets/main.css" type="text/css"/>
+	<script src="jquery-3.4.1.min.js"></script>
+	<title>ASCIIng the Time</title>
+	<style>
+		#mars {
+			margin-top: 10px;
+			margin-left: 10px;
+			margin-right: 10px;
+			font-family: monospace;
+			display: inline-block;
+		}
+		#intro {
+			height: 25px;
+			display: block;
+			position: fixed;
+			bottom: 15px;
+			margin-left: 10px;
+			margin-right: 10px;
+			font-family: monospace;
+			font-size: 10px;
+			letter-spacing: 2px;
+		}
+
+		@media screen and (max-width: 570px) {
+			#mars {
+				font-size: 0.6vw;
+				letter-spacing: 1px;
+				line-height: 3px;
+			}
+		}
+
+		@media screen and (min-width: 571px) {
+			#mars {
+				font-size: 0.65vw;
+				letter-spacing: 1px;
+				line-height: 4px;
+			}
+		}
+
+		@media screen and (min-width: 712px) {
+			#mars {
+				font-size: 0.5vw;
+				letter-spacing: 2px;
+				line-height: 4px;
+			}
+		}
+
+		@media screen and (min-width: 768px) {
+		  #mars {
+		    font-size: 0.55vw;
+				letter-spacing: 2px;
+				line-height: 5px;
+		  }
+		}
+
+		@media screen and (min-width: 992px) {
+			#mars {
+				font-size: 0.65vw;
+				letter-spacing: 2px;
+				line-height: 6px;
+			}
+		}
+
+		@media screen and (min-width: 1095px) {
+			#mars {
+				font-size: 0.6vw;
+				letter-spacing: 2px;
+				line-height: 7px;
+			}
+
+		@media screen and (min-width: 1217px) {
+			#mars {
+				font-size: 0.6vw;
+				letter-spacing: 3px;
+				line-height: 8px;
+			}
+		}
+
+		@media screen and (min-width: 1380px) {
+			#mars {
+				font-size: 0.65vw;
+				letter-spacing: 3px;
+				line-height: 9px;
+			}
+		}
+
+		@media screen and (max-width: 712px) {
+			#intro {
+				font-size: 0.8rem;
+			}
+		}
+		</style>
+</head>
+
+<body>
+
+	<div class="nav">
+			<div class="site-title"><a href="../../index.html">Aerosol—Weather</a></div>
+			<div class="back-button"><a href="../../project-1/list_5_5.html">Back</a></div>
+			<div class="next-button"><a href="../../index.html">Next</a></div>
+	</div>
+
+	<div id="mars"></div>
+	<div id="intro"></div>
+
+
+	<script type="text/javascript">
+
+			var dispNumCharacters;
+			var curImg = 0;
+			var i = 0;
+
+			class imgToAscii {
+				constructor(image,size,charType){
+					this.size = ( size <= 0 || size > 1 ? 1 : size) || 1;
+					this.charType = charType || 0;
+					this.alphabet = {
+						0: ["@","%","#","*","+","=","-",":","."," "],
+						1: ["$","@","B","%","8","&","W","M","#","*","o","a","h","k","b","d","p","q","w","m","Z","O",
+								"0","Q","L","C","J","U","Y","X","z","c","v","u","n","x","r","j","f","t","/","\\","|","(",
+								")","1","{","}","[","]","?","-","_","+","~","\<","\>","i","!","l","I",";",":",",","\"","^",
+								"`","'","."," "]
+					}
+					this.string = "";
+					this.stringColor = "";
+					this.imageSrc = image;
+					this.loadImage = new Promise( (resolve,reject) =>{
+						this.image = new Image();
+						this.image.src = this.imageSrc;
+						this.image.onload = ()=> {
+							this.canvas = document.createElement('canvas');
+							this.canvas.width = this.image.width * this.size;
+							this.canvas.height = this.image.height * this.size;
+							this.context = this.canvas.getContext('2d');
+							this.context.drawImage(this.image, 0, 0, this.canvas.width, this.canvas.height);
+							this.imageData = this.context.getImageData(0,0,this.canvas.width,this.canvas.height);
+							let grayStep = Math.ceil( 255 / this.alphabet[this.charType].length );
+							for(let i = 0; i < this.imageData.data.length; i+=4){
+								for(let j = 0; j < this.alphabet[this.charType].length; j++){
+									let r = this.imageData.data[i];
+									let g = this.imageData.data[i+1];
+									let b = this.imageData.data[i+2];
+									if( (r * 0.2126) + (g * 0.7152) + (b * 0.0722) < (j+1) * grayStep ){
+										this.string += this.alphabet[this.charType][j];
+										this.stringColor += "<span style=\"color: rgb("+r+","+g+","+b+"); \">"
+											 +this.alphabet[this.charType][j]
+											 +"</span>";
+										break;
+									}
+								}
+								if( !((i/4+1) % this.canvas.width) ){
+									this.string += "\n";
+									this.stringColor += "<br>";
+								}
+							}
+							resolve();
+						};
+						this.image.error = reject;
+					}).catch( e => console.error(e) );
+				}
+
+				async display(img_count) {
+
+					await this.loadImage;
+
+					var delay = 4646;
+					var elem = $("#mars");
+					elem.css({
+						fontFamily: "Courier, monospace",
+						/* lineHeight: "7px",
+						fontSize: "10px",
+						letterSpacing: "3px", */
+						display: "inline-block"
+					});
+					elem.html('');
+
+
+					var characters = this.string;
+					var total_characters = characters.length;
+					// var total_characters = 200;
+					console.log("total = " + total_characters);
+					console.log("display characters = " + dispNumCharacters);
+
+					// how to display the first image -- the one that loads partially based on time of day
+					function display_character_initial() {
+				        if (i < dispNumCharacters) {
+				        	if(characters[i] == '\n') {
+							        elem.html(elem.html() + '<br/>');
+								} else {
+							        elem.html(elem.html() + characters[i]);
+								}
+				          i++;
+				          if (i < total_characters) {
+				            display_character_initial();
+				          }
+				        } else {
+				          setTimeout(function() {
+				            if(characters[i] == '\n') {
+							        elem.html(elem.html() + '<br/>');
+								} else {
+							        elem.html(elem.html() + characters[i]);
+								}
+				            i++;
+				            if (i < total_characters) {
+				              display_character_initial();
+				            }
+				          }, 2);
+				        }
+				      }
+
+				    // how to display subsequent images
+					function display_character() {
+						if (i < total_characters) {
+					          setTimeout(function() {
+					            if(characters[i] == '\n') {
+								        elem.html(elem.html() + '<br/>');
+									} else {
+								        elem.html(elem.html() + characters[i]);
+									}
+					            i++;
+					            if (i < total_characters) {
+					              display_character();
+					            }
+					          }, 2);
+					        }
+					}
+
+					// this runs the correct display function, depending on whether it's the first image or a subsequent image.
+					if (img_count == 0) {
+						console.log('first');
+
+					    display_character_initial();
+					} else {
+						console.log('not first');
+
+						display_character();
+					}
+
+
+				}
+
+			}
+
+
+
+			// this function gets the number of characters based on the time of day. saves that number in variable called dispNumCharacters.
+			function getNumCharacters(){
+				let d = new Date();
+			  	let timeMs = d.getTime();
+			    let remaind = timeMs % 88642000;
+			    let prctgMarsDay = remaind / 88642000;
+			    dispNumCharacters = Math.floor(prctgMarsDay * 19200);
+			    return dispNumCharacters;
+			}
+
+			function setupNewImage(imageName) {
+				let mars = new imgToAscii(imageName,0.8);
+				mars.crossOrigin = "anonymous";
+
+				mars.display(curImg);
+			}
+
+			// run this stuff on page load
+			$( document ).ready(function() {
+				let imageNames = ['mars8_200x150.png', 'mars1_200x150.png', 'mars2_200x150.png', 'mars3_200x150.png', 'mars4_200x150.png', 'mars5_200x150.png', 'mars6_200x150.png', 'mars7_200x150.png', 'mars9_200x150.png', 'mars10_200x150.png'];
+
+				getNumCharacters();
+
+				// run it immediately
+				setupNewImage(imageNames[curImg]);
+				console.log("curImg =" + curImg);
+				curImg++;
+
+				// loop through the other images
+				var imageDelay = 88642000;
+				// var imageDelay = 2000;
+				setInterval(function() {
+					$("#mars").html('');
+					setupNewImage(imageNames[curImg]);
+					curImg = (curImg + 1) % imageNames.length;
+					i = 0;
+				}, imageDelay);
+			});
+
+	</script>
+
+
+
+
+	<script type="text/javascript">
+		var text="This is a visual clock that renders one image of the surface of Mars (courtesy of NASA and Google Mars) per Mars day, which lasts 24 hours, 37 minutes, and 22 seconds.";
+		var delay=60;
+		var elem = $("#intro");
+		//text- string
+		//elem - jQuery element where text is to be attached
+		//delay - the delay in each text
+		var addTextByDelay = function(text,elem,delay){
+		    if(!elem){
+		        elem = $("body");
+		    }
+		    if(!delay){
+		        delay = 300;
+		    }
+		    if(text.length >0){
+		        //append first character
+		        elem.append(text[0]);
+		        setTimeout(
+		            function(){
+		                //Slice text by 1 character and call function again
+		                addTextByDelay(text.slice(1),elem,delay);
+		             },delay
+		            );
+		    }
+		}
+		addTextByDelay(text,elem,delay);
+	</script>
+
+
+
+
+	<script type="text/javascript">
+		var colors = ['darkgrey','darkgoldenrod','#dff0f4','linen','azure'];
+		var new_color = colors[Math.floor(Math.random()*colors.length)];
+		$('body').css('background-color',new_color);
+	</script>
+
+
+</body>
+</html>
